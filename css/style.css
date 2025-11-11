@@ -109,7 +109,6 @@ nav ul li, footer ul li {
 }
 
 .navbar li:not(:last-child)::after {
-    content: "|";            /* Línea vertical */
     position: absolute;
     right: -10px;            /* Ajusta según el espacio que quieras */
     color: #ffffff;             /* Color de la línea */
