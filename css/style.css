@@ -72,3 +72,16 @@ footer a:hover {
   transition: color 0.3s;      /* Animación suave al cambiar color */
   position: center;          /* Para colocar el separador */
 }
+
+.navbar {
+  color: #edf2f4;             /* Color enlaces en footer */
+  text-decoration: none;       /* Sin subrayado */
+}
+.navbar a {
+  color: #edf2f4;             /* Color enlaces en footer */
+  text-decoration: none;       /* Sin subrayado */
+}
+
+.navbar a:hover {
+  text-decoration: underline;  /* Subrayado al pasar el mouse */
+}
