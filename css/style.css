@@ -39,20 +39,6 @@ h2 {
   padding-bottom: 0.3rem;     /* Separación entre texto y línea */
 }
 
-/* --- Experiencia laboral (job) --- */
-.job {
-  margin-bottom: 1rem;        /* Espacio debajo de cada trabajo */
-}
-
-.job h3 {
-  margin: 0;                  /* Quita margen por defecto */
-}
-
-.job .date {
-  font-size: 0.9rem;          /* Tamaño de fecha más pequeño */
-  color: #555;                /* Color gris oscuro para la fecha */
-}
-
 /* --- Footer --- */
 footer {
   text-align: center;         /* Centrar texto del footer */
@@ -72,47 +58,19 @@ footer a:hover {
 }
 
 /* --- Navegación --- */
-.navbar {
-  margin-top: 1rem;            /* Separación superior */
-  display: flex;               /* Flexbox horizontal */
-  justify-content: center;     /* Centrar los links */
-  gap: 0.5rem;                 /* Espacio entre links y los separadores */
-}
-
-.navbar a {
-  color: white;                /* Color de los links */
-  text-decoration: none;       /* Sin subrayado */
-  font-weight: 600;            /* Negrita ligera */
-  transition: color 0.3s;      /* Animación suave al cambiar color */
-  position: relative;          /* Para colocar el separador */
-}
-
-.navbar a:not(:last-child)::after { 
-  content: "|";               /* Agrega barra separadora entre links */
-  margin-left: 0.5rem;        /* Espaciado después de la barra */
-  margin-right: 0.5rem;       /* Espaciado antes de la barra */
-  color: white;               /* Color de la barra */
-}
-
-.navbar a:hover {
-  color: #edf2f4;             /* Cambio de color al pasar el mouse */
-}
-
 .navbar ul {
-    display: flex;           /* Hace que los li estén en línea */
-    list-style: none;        /* Quita los bullets */
-    padding: 0;              /* Quita padding por defecto */
-    margin: 0;               /* Quita margen por defecto */
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Alinea verticalmente el separador con los enlaces */
 }
 
 .navbar li {
-    margin-right: 20px;      /* Espacio entre los items */
-    position: relative;
+    margin: 0 10px; /* Espacio horizontal opcional */
 }
 
-.navbar li:not(:last-child)::after {
-    content: "|";            /* Línea vertical */
-    position: absolute;
-    right: -10px;            /* Ajusta según el espacio que quieras */
-    color: #000;             /* Color de la línea */
+.separator {
+    color: #000;      /* Color del separador */
+    margin: 0 10px;   /* Espacio alrededor del separador */
 }
