@@ -97,3 +97,22 @@ footer a:hover {
 .navbar a:hover {
   color: #edf2f4;             /* Cambio de color al pasar el mouse */
 }
+
+.navbar ul {
+    display: flex;           /* Hace que los li estén en línea */
+    list-style: none;        /* Quita los bullets */
+    padding: 0;              /* Quita padding por defecto */
+    margin: 0;               /* Quita margen por defecto */
+}
+
+.navbar li {
+    margin-right: 20px;      /* Espacio entre los items */
+    position: relative;
+}
+
+.navbar li:not(:last-child)::after {
+    content: "|";            /* Línea vertical */
+    position: absolute;
+    right: -10px;            /* Ajusta según el espacio que quieras */
+    color: #000;             /* Color de la línea */
+}
