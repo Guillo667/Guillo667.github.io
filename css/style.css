@@ -1,98 +1,99 @@
+/* --- Body --- */
 body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-  margin: 0;
-  background-color: #f4f4f9;
-  color: #333;
-  line-height: 1.6;
+  font-family: "Segoe UI", Roboto, sans-serif; /* Fuentes principales y de respaldo */
+  margin: 0;                                  /* Quita el margen por defecto del navegador */
+  background-color: #f4f4f9;                  /* Color de fondo claro */
+  color: #333;                                /* Color de texto principal */
+  line-height: 1.6;                           /* Altura de línea para mejor lectura */
+
+  display: flex;             /* Flexbox para layout vertical */
+  flex-direction: column;    /* Apila header, main y footer en columna */
+  min-height: 100vh;         /* Ocupa al menos toda la altura de la ventana */
 }
 
+/* --- Header --- */
 header {
-  background: #2b2d42;
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
+  background: #2b2d42;      /* Color de fondo oscuro */
+  color: #fff;               /* Texto blanco */
+  text-align: center;        /* Centrar texto */
+  padding: 2rem 1rem;        /* Espaciado interno vertical y horizontal */
 }
 
 header h1 {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem;     /* Separación debajo del título principal */
 }
 
+/* --- Secciones --- */
 section {
-  background: #fff;
-  margin: 1rem auto;
-  padding: 1.5rem;
-  max-width: 65%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;           /* Fondo blanco para cada sección */
+  margin: 1rem auto;          /* Separación vertical y centrado horizontal */
+  padding: 1.5rem;            /* Espaciado interno */
+  max-width: 800px;           /* Máximo ancho de sección */
+  border-radius: 10px;        /* Bordes redondeados */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
 h2 {
-  color: #2b2d42;
-  border-bottom: 2px solid #8d99ae;
-  padding-bottom: 0.3rem;
+  color: #2b2d42;             /* Color de títulos de sección */
+  border-bottom: 2px solid #8d99ae; /* Línea inferior decorativa */
+  padding-bottom: 0.3rem;     /* Separación entre texto y línea */
 }
 
+/* --- Experiencia laboral (job) --- */
 .job {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;        /* Espacio debajo de cada trabajo */
 }
 
 .job h3 {
-  margin: 0;
+  margin: 0;                  /* Quita margen por defecto */
 }
 
 .job .date {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.9rem;          /* Tamaño de fecha más pequeño */
+  color: #555;                /* Color gris oscuro para la fecha */
 }
 
+/* --- Footer --- */
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #2b2d42;
-  color: white;
+  text-align: center;         /* Centrar texto del footer */
+  padding: 1rem;              /* Espaciado interno */
+  background: #2b2d42;        /* Fondo oscuro */
+  color: white;               /* Texto blanco */
+  margin-top: auto;           /* Empuja el footer al fondo del flex container */
 }
 
 footer a {
-  color: #edf2f4;
-  text-decoration: none;
+  color: #edf2f4;             /* Color enlaces en footer */
+  text-decoration: none;       /* Sin subrayado */
 }
 
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: underline;  /* Subrayado al pasar el mouse */
 }
 
-/* --- Navegación --- 
+/* --- Navegación --- */
 .navbar {
-  margin-top: 1rem;
-  background-color: #8d99ae;
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  border-radius: 8px;
-}*/
+  margin-top: 1rem;            /* Separación superior */
+  display: flex;               /* Flexbox horizontal */
+  justify-content: center;     /* Centrar los links */
+  gap: 0.5rem;                 /* Espacio entre links y los separadores */
+}
 
 .navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
+  color: white;                /* Color de los links */
+  text-decoration: none;       /* Sin subrayado */
+  font-weight: 600;            /* Negrita ligera */
+  transition: color 0.3s;      /* Animación suave al cambiar color */
+  position: relative;          /* Para colocar el separador */
+}
+
+.navbar a:not(:last-child)::after { 
+  content: "|";               /* Agrega barra separadora entre links */
+  margin-left: 0.5rem;        /* Espaciado después de la barra */
+  margin-right: 0.5rem;       /* Espaciado antes de la barra */
+  color: white;               /* Color de la barra */
 }
 
 .navbar a:hover {
-  color: #edf2f4;
+  color: #edf2f4;             /* Cambio de color al pasar el mouse */
 }
-
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-}
-
-nav ul li, footer ul li {
-    display: inline;
-    margin-left: 20px;
-    margin-right: 20px; /* largeur inter section */
-}
-
