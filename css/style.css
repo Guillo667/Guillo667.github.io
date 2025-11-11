@@ -69,7 +69,6 @@ footer a:hover {
   color: white;                /* Color de los links */
   text-decoration: none;       /* Sin subrayado */
   font-weight: 600;            /* Negrita ligera */
-  transition: color 0.3s;      /* Animación suave al cambiar color */
   position: center;          /* Para colocar el separador */
 }
 
