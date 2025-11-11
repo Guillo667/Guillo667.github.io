@@ -58,19 +58,17 @@ footer a:hover {
 }
 
 /* --- Navegación --- */
-.navbar ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center; /* Alinea verticalmente el separador con los enlaces */
+.navbar {
+  margin-top: 1rem;            /* Separación superior */
+  display: flex;               /* Flexbox horizontal */
+  justify-content: center;     /* Centrar los links */
+  gap: 0.5rem;                 /* Espacio entre links y los separadores */
 }
 
-.navbar li {
-    margin: 0 10px; /* Espacio horizontal opcional */
-}
-
-.separator {
-    color: #000;      /* Color del separador */
-    margin: 0 10px;   /* Espacio alrededor del separador */
+.navbar a {
+  color: white;                /* Color de los links */
+  text-decoration: none;       /* Sin subrayado */
+  font-weight: 600;            /* Negrita ligera */
+  transition: color 0.3s;      /* Animación suave al cambiar color */
+  position: center;          /* Para colocar el separador */
 }
