@@ -84,3 +84,43 @@ footer a:hover {
 .navbar a:hover {
   text-decoration: underline;  /* Subrayado al pasar el mouse */
 }
+
+/* --- NAV RESPONSIVE --- */
+.navbar {
+  margin-top: 1rem;
+  background-color: #8d99ae;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  border-radius: 8px;
+  flex-wrap: wrap; /* <<< Clave para móviles */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  white-space: nowrap; /* evita que se rompan palabras feo */
+}
+
+.navbar a:hover {
+  color: #edf2f4;
+}
+
+
+/* --- Ajustes para pantallas pequeñas --- */
+@media (max-width: 600px) {
+  .navbar {
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    background: #2b2d42;        /* botones individuales */
+    border-radius: 6px;
+  }
+}
