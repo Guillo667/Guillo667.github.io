@@ -120,7 +120,7 @@ footer a:hover {
   .navbar a {
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
-    background: #2b2d42;        /* botones individuales */
+    background: #edf2f4;        /* botones individuales */
     border-radius: 6px;
   }
 }
