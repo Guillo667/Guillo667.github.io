@@ -37,10 +37,20 @@ jobs:
           cat 4_referencias.md >> CV_completo.md
 
       - name: Generar PDF ATS-Friendly
-        run: pandoc CV_completo.md -o CV_Guillermo_Aguilera.pdf --pdf-engine=xelatex -V mainfont="Arial" -V geometry:margin=1in
+        run: pandoc CV_completo.md -o CV_Guillermo_Aguilera.pdf --pdf-engine=xelatex -V mainfont="TeX Gyre Heros" -V geometry:margin=1in
 
       - name: Subir PDF como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: CV_Guillermo_Aguilera
           path: CV_Guillermo_Aguilera.pdf
+      
+      - name: Commit y subir PDF al repositorio
+        run: |
+          mkdir -p downloads
+          cp CV_Guillermo_Aguilera.pdf downloads/
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add downloads/CV_Guillermo_Aguilera.pdf
+          git commit -m "Actualización automática del CV"
+          git push
