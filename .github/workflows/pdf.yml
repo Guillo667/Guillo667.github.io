@@ -1,0 +1,46 @@
+name: Generar PDF CV
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Instalar Pandoc
+        run: sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Convertir HTML a Markdown y unir archivos
+        run: |
+          pandoc index.html -o 0_presentacion.md
+          pandoc habilidades/index.html -o 1_habilidades.md
+          pandoc experiencia/index.html -o 2_experiencia.md
+          pandoc estudios/index.html -o 3_estudios.md
+          pandoc referencias/index.html -o 4_referencias.md
+
+          echo "# Curriculum Vitae — Guillermo Aguilera" > CV_completo.md
+          echo "" >> CV_completo.md
+
+          cat 0_presentacion.md >> CV_completo.md
+          echo "" >> CV_completo.md
+          cat 1_habilidades.md >> CV_completo.md
+          echo "" >> CV_completo.md
+          cat 2_experiencia.md >> CV_completo.md
+          echo "" >> CV_completo.md
+          cat 3_estudios.md >> CV_completo.md
+          echo "" >> CV_completo.md
+          cat 4_referencias.md >> CV_completo.md
+
+      - name: Generar PDF ATS-Friendly
+        run: pandoc CV_completo.md -o CV_Guillermo_Aguilera.pdf --pdf-engine=xelatex -V mainfont="Arial" -V geometry:margin=1in
+
+      - name: Subir PDF como artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: CV_Guillermo_Aguilera
+          path: CV_Guillermo_Aguilera.pdf
