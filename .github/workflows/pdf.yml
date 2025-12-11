@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Instalar Pandoc
-        run: sudo apt-get install -y pandoc texlive-xetex
+      - name: Instalar Pandoc + LaTeX engine
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex
 
       - name: Convertir HTML a Markdown y unir archivos
         run: |
@@ -40,7 +40,7 @@ jobs:
         run: pandoc CV_completo.md -o CV_Guillermo_Aguilera.pdf --pdf-engine=xelatex -V mainfont="Arial" -V geometry:margin=1in
 
       - name: Subir PDF como artefacto
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: CV_Guillermo_Aguilera
           path: CV_Guillermo_Aguilera.pdf
