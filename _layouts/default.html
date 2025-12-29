@@ -12,8 +12,12 @@
 <body>
     <header>
         <h1>Guillermo Aguilera</h1>
-        <p>Ingeniero Matemático | Master en Matemáticas e Informática</p>
-
+        {% if page.lang == "es" %}
+            <p>Ingeniero Matemático | Master en Matemáticas e Informática</p>
+        {% else %}
+            <p>Mathematical Engineer | Master’s in Mathematics and Computer Science</p>        
+        {% endif %}
+        
         <nav class="navbar">
             {% if page.lang == "es" %}
                 <a href="{{ '/es/' | relative_url }}">Inicio</a> |
