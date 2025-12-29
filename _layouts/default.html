@@ -13,15 +13,6 @@
     <header>
         <h1>Guillermo Aguilera</h1>
         <p>Ingeniero Matemático | Master en Matemáticas e Informática</p>
-        
-        <div class="lang-switch">
-            {% if page.lang == "es" %}
-                <a href="{{ page.url | replace:'/es/','/en/' }}">EN</a>
-            {% else %}
-                <a href="{{ page.url | replace:'/en/','/es/' }}">ES</a>
-            {% endif %}
-        </div>
-
 
         <nav class="navbar">
             {% if page.lang == "es" %}
@@ -31,7 +22,7 @@
                 <a href="{{ '/es/referencias' | relative_url }}">Referencias</a></li>|
                 <a href="{{ '/es/habilidades' | relative_url }}">Habilidades</a></li>
             {% else %}
-                <a href="{{ '/en/' | relative_url }}">Inicio</a></li> |
+                <a href="{{ '/en/' | relative_url }}">Home</a></li> |
                 <a href="{{ '/en/experience' | relative_url }}">Experience</a></li>|
                 <a href="{{ '/en/education' | relative_url }}">Education</a></li>|
                 <a href="{{ '/en/references' | relative_url }}">References</a></li>|
@@ -46,6 +37,11 @@
 
     <footer>
         <p>
+            {% if page.lang == "es" %}
+                <a href="{{ page.url | replace:'/es/','/en/' }}">EN</a>
+            {% else %}
+                <a href="{{ page.url | replace:'/en/','/es/' }}">ES</a>
+            {% endif %}
             📧 <a href="mailto:guillermoaguilera.71@hotmail.com">guillermoaguilera.71@hotmail.com</a> |
             🌐 <a href="https://github.com/guillo667">GitHub</a> |
             💼 <a href="https://www.linkedin.com/in/guillo667">LinkedIn</a> |
