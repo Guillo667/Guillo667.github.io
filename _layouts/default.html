@@ -37,10 +37,12 @@
 
     <footer>
         <p>
-            {% if page.lang == "es" %}
-                <a href="{{ page.url | replace:'/es/','/en/' }}">EN</a>
-            {% else %}
-                <a href="{{ page.url | replace:'/en/','/es/' }}">ES</a>
+            {% if page.alt_url %}
+                {% if page.lang == "es" %}
+                    <a href="{{ page.alt_url }}">EN</a> |
+                {% else %}
+                    <a href="{{ page.alt_url }}">ES</a> |
+                {% endif %}
             {% endif %}
             📧 <a href="mailto:guillermoaguilera.71@hotmail.com">guillermoaguilera.71@hotmail.com</a> |
             🌐 <a href="https://github.com/guillo667">GitHub</a> |
