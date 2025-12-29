@@ -13,13 +13,30 @@
     <header>
         <h1>Guillermo Aguilera</h1>
         <p>Ingeniero Matemático | Master en Matemáticas e Informática</p>
+        
+        <div class="lang-switch">
+            {% if page.lang == "es" %}
+                <a href="{{ page.url | replace:'/es/','/en/' }}">EN</a>
+            {% else %}
+                <a href="{{ page.url | replace:'/en/','/es/' }}">ES</a>
+            {% endif %}
+        </div>
+
 
         <nav class="navbar">
-            <a href="{{ '/' | relative_url }}">Inicio</a></li> |
-            <a href="{{ '/experiencia' | relative_url }}">Experiencia</a></li>|
-            <a href="{{ '/estudios' | relative_url }}">Estudios</a></li>|
-            <a href="{{ '/referencias' | relative_url }}">Referencias</a></li>|
-            <a href="{{ '/habilidades' | relative_url }}">Habilidades</a></li>
+            {% if page.lang == "es" %}
+                <a href="{{ '/es/' | relative_url }}">Inicio</a></li> |
+                <a href="{{ '/es/experiencia' | relative_url }}">Experiencia</a></li>|
+                <a href="{{ '/es/estudios' | relative_url }}">Estudios</a></li>|
+                <a href="{{ '/es/referencias' | relative_url }}">Referencias</a></li>|
+                <a href="{{ '/es/habilidades' | relative_url }}">Habilidades</a></li>
+            {% else %}
+                <a href="{{ '/en/' | relative_url }}">Inicio</a></li> |
+                <a href="{{ '/en/experience' | relative_url }}">Experience</a></li>|
+                <a href="{{ '/en/education' | relative_url }}">Education</a></li>|
+                <a href="{{ '/en/references' | relative_url }}">References</a></li>|
+                <a href="{{ '/en/skills' | relative_url }}">Skills</a></li>
+            {% endif %}
         </nav>
     </header>
 
@@ -33,7 +50,11 @@
             🌐 <a href="https://github.com/guillo667">GitHub</a> |
             💼 <a href="https://www.linkedin.com/in/guillo667">LinkedIn</a> |
             📍 Quito, Ecuador | 📱 +593 95 952 0546 |
-            📄 <a href="/downloads/01_cv_Guillermo_Aguilera.pdf" download> Descargar CV (PDF)</a>
+            {% if page.lang == "es" %}
+                <a href="/downloads/01_cv_es_Guillermo_Aguilera.pdf" download>📄 Descargar CV</a>
+            {% else %}
+                <a href="/downloads/01_cv_en_Guillermo_Aguilera.pdf" download>📄 Download CV</a>
+            {% endif %}
         </p>
     </footer>
 </body>
